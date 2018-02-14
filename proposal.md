@@ -86,7 +86,7 @@ f1-measure = 2 * (precision * recall) / (precision + recall)
 该神经网络有三层：线性层、HardTanh非线性层以及输出层。如何通过词语构造神经网络的输入呢？首先把每个词都通过查找表转换为词向量，然后把该词语的其他特征(如POS)进行编码(如独热编码)，结合词向量作为神经网络的输入,词向量则是预先训练好的。这里我们可以通过使用word2vec等工具在人民日报语料库上训练得到词向量。此外还有一点要注意，句子一般是变长的，而神经网络只能处理固定维度的输入，[1]介绍了window方法和sentence方法来处理该问题，这里主要谈window方法。该方法一次仅标注一个词，且假设每个词的标注仅与附近的词相关，那么，我们只需要把该词及周边固定数量K的几个词作为神经网络输入即可，K可作为系统的超参数调节。
 
 
-## 8. 附：预计将使用的工具包
+## 8. 附：预计将使用资源
 1. [Stanford POS Tagger](https://nlp.stanford.edu/software/tagger.shtml)
 2. [pycrfsuite](https://pypi.python.org/pypi/python-crfsuite)
 3. [gensim](https://radimrehurek.com/gensim/models/word2vec.html)
